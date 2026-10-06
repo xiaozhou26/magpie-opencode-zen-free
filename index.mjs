@@ -93,7 +93,7 @@ function sessionID(headers, body) {
     signal = first ? JSON.stringify(first) : randomUUID();
   }
   if (/^ses_[0-9a-f]{12}[0-9A-Za-z]{14}$/.test(signal)) return signal;
-  // Match opencode2api's canonical session IDs while keeping conversation affinity.
+  // Keep conversation affinity using OpenCode's canonical session format.
   const hash = createHash("sha256").update(`ses\0${signal}`).digest("hex");
   let value = BigInt(`0x${hash.slice(12, 32)}`);
   let suffix = "";

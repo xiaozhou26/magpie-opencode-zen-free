@@ -43,4 +43,4 @@ Magpie 页面测试的当次结果：
 
 这些结果描述验证时刻的上游状态。模型目录可见与当次推理成功是两个独立结果。
 
-`D:\Go\opencode2api` 的 Git 状态保持干净；插件全部源码位于 `D:\magpie-opencode-zen-free`。
+插件全部源码位于独立目录 `D:\magpie-opencode-zen-free`。

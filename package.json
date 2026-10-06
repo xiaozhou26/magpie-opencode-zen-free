@@ -1,7 +1,7 @@
 {
   "name": "opencode-zen-free-plugin",
-  "version": "0.1.0",
-  "description": "Magpie/OpenCode provider for OpenCode Zen free models, based on opencode2api",
+  "version": "0.1.1",
+  "description": "Magpie/OpenCode provider for OpenCode Zen free models",
   "license": "MIT",
   "author": "xiaozhou26",
   "repository": {

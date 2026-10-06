@@ -1,6 +1,6 @@
 # OpenCode Zen Free · Magpie 插件
 
-独立的 Magpie / OpenCode 供应商插件的免费模型发现和请求兼容逻辑实现，直接连接 `https://opencode.ai/zen/v1`。
+独立的 Magpie / OpenCode 供应商插件，支持免费模型发现、工具调用和流式响应，直接连接 `https://opencode.ai/zen/v1`。运行时零 npm 依赖。
 
 供应商 ID：`opencode-zen-free`。插件按 [Magpie 插件开发文档](https://usemagpie.ai/docs/zh/plugins) 实现 `config`、`auth`、`provider.models` 和 `chat.headers` 钩子。
 
@@ -9,7 +9,7 @@
 ### 从 GitHub 安装
 
 ```sh
-magpie plugin add github:xiaozhou26/magpie-opencode-zen-free#v0.1.0
+magpie plugin add github:xiaozhou26/magpie-opencode-zen-free#v0.1.1
 magpie plugin login opencode-zen-free
 ```
 
@@ -64,7 +64,7 @@ opencode-zen-free/muse-spark-1.3-contributor-free
 - `auth.usage` 只报告免费套餐名称，额度窗口为空；Zen 未提供可供此插件读取的匿名剩余额度接口。
 - SystemOne 模型（例如 `jev-1.13-free`）不在本插件的可用模型列表中。
 
-本插件固定使用 `public`，并且只允许已发现的免费模型。登录不会读取 `opencode2api` 的本地 Key、Zen 付费 Key、Go Key 或原有配置文件。
+本插件固定使用 `public`，并且只允许已发现的免费模型。登录仅保存公开凭证，插件独立管理自身设置。
 
 ## 选项
 
@@ -133,7 +133,7 @@ $env:MAGPIE_PLUGIN_MARKET = 'off'
 & $magpie provider test opencode-zen-free big-pickle
 ```
 
-## 文件与来源
+## 文件结构
 
 - `index.mjs`：Magpie/OpenCode 插件入口、登录、请求和模型刷新。
 - `models.mjs`：免费筛选、协议发现、能力映射和离线初始模型。
@@ -141,4 +141,4 @@ $env:MAGPIE_PLUGIN_MARKET = 'off'
 - `*.test.mjs`：本地回归测试。
 - `smoke.mjs`：可重复运行的真实上游验证。
 
-参考实现：`opencode2api/internal/gateway/upstream.go`、`internal/models/discovery.go`、`internal/models/pricing.go`、`internal/protocol/`。本目录独立运行，原 Go 项目保持不变。
+全部运行时模块位于本目录，可直接作为 Magpie 文件夹插件加载。

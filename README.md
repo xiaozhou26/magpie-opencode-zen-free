@@ -1,4 +1,4 @@
-# opencode-zen-free
+# OpenCode Zen Free
 
 在 Magpie 和 OpenCode 中使用 OpenCode Zen 免费模型。
 供应商 ID：`opencode-zen-free`。

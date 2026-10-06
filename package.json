@@ -1,0 +1,47 @@
+{
+  "name": "opencode-zen-free-plugin",
+  "version": "0.1.0",
+  "description": "Magpie/OpenCode provider for OpenCode Zen free models, based on opencode2api",
+  "license": "MIT",
+  "author": "xiaozhou26",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaozhou26/magpie-opencode-zen-free.git"
+  },
+  "homepage": "https://github.com/xiaozhou26/magpie-opencode-zen-free#readme",
+  "bugs": { "url": "https://github.com/xiaozhou26/magpie-opencode-zen-free/issues" },
+  "type": "module",
+  "main": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./server": "./index.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "models.mjs",
+    "stream.mjs",
+    "smoke.mjs",
+    "README.md"
+  ],
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "magpie",
+    "zen",
+    "free",
+    "provider"
+  ],
+  "scripts": {
+    "test": "node --test *.test.mjs",
+    "test:bun": "bun test",
+    "smoke": "bun smoke.mjs",
+    "check": "node --check index.mjs && node --check models.mjs && node --check stream.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "magpie": {
+    "icon": "https://opencode.ai/favicon-v3.ico",
+    "maxConcurrency": 2
+  }
+}

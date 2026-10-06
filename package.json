@@ -1,6 +1,6 @@
 {
-  "name": "opencode-zen-free-plugin",
-  "version": "0.1.1",
+  "name": "opencode-zen-free",
+  "version": "0.1.2",
   "description": "Magpie/OpenCode provider for OpenCode Zen free models",
   "license": "MIT",
   "author": "xiaozhou26",
@@ -20,6 +20,7 @@
     "index.mjs",
     "models.mjs",
     "stream.mjs",
+    "tool-response.mjs",
     "smoke.mjs",
     "README.md"
   ],
@@ -35,7 +36,7 @@
     "test": "node --test *.test.mjs",
     "test:bun": "bun test",
     "smoke": "bun smoke.mjs",
-    "check": "node --check index.mjs && node --check models.mjs && node --check stream.mjs"
+    "check": "node --check index.mjs && node --check models.mjs && node --check stream.mjs && node --check tool-response.mjs"
   },
   "engines": {
     "node": ">=22"
